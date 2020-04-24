@@ -145,6 +145,8 @@ Error message and password prompt
 
 <li>$:/.meta/templates/livros</li>
 
+<li>$:/.meta/ui/ViewTemplate/nomeAutor</li>
+
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/DefaultMoreSidebarTab</li>
@@ -469,6 +471,10 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>A vida como ela é</li>
+
+<li>Brás Cubas</li>
+
 <li>citações</li>
 
 <li>Dom Casmurro</li>
@@ -477,17 +483,27 @@ Error message and password prompt
 
 <li>Filosofia para Corajosos</li>
 
+<li>Guerra e Paz</li>
+
+<li>Hamlet</li>
+
 <li>Index</li>
 
 <li>Lido</li>
 
 <li>Livros</li>
 
+<li>Macbeth</li>
+
 <li>O Dilema do Porco Espinho</li>
 
 <li>O Mundo de Sofia</li>
 
+<li>Os Irmãos Karamazov</li>
+
 <li>pensamentos</li>
+
+<li>Romeu e Julieta</li>
 
 <li>Sobre Insatisfação</li>
 
@@ -517,10 +533,16 @@ Error message and password prompt
 &lt;/$list&gt;
 \end</pre>
 </div>
-<div created="20200424152951230" modified="20200424160315956" tags="" title="$:/.meta/templates/livros">
+<div created="20200424152951230" modified="20200424175126979" tags="" title="$:/.meta/templates/livros">
 <pre>&lt;$link to={{!!title}} tooltip=&quot;Custom tooltip&quot;&gt;
-{{!!title}} - {{!!autor}}
-&lt;/$link&gt;</pre>
+{{!!title}}
+&lt;/$link&gt;
+- {{!!autor}}</pre>
+</div>
+<div created="20200424170804602" list-after="$:/core/ui/ViewTemplate/title" modified="20200424172239324" tags="$:/tags/ViewTemplate" title="$:/.meta/ui/ViewTemplate/nomeAutor">
+<pre>&lt;$list filter=&quot;[all[current]has[autor]]&quot;&gt;
+@@color:grey; // &lt;$transclude field=&quot;autor&quot; mode=&quot;inline&quot;/&gt; //@@
+&lt;/$list&gt;</pre>
 </div>
 <div created="20200423142718914" modified="20200423142718914" title="$:/config/AutoSave">
 <pre>no</pre>
@@ -13522,7 +13544,7 @@ Error message and password prompt
 <div created="20200424152735641" modified="20200424152735641" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20200421144407084" modified="20200421181547900" title="$:/state/sidebar">
+<div created="20200421144407084" modified="20200424180528315" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20200421161142627" modified="20200421161150635" title="$:/state/tab--1498284803">
@@ -13546,16 +13568,16 @@ Error message and password prompt
 <div created="20200421185412208" modified="20200423142715327" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20200421145941134" modified="20200424154617600" title="$:/state/tab/moresidebar-1850697562">
+<div created="20200421145941134" modified="20200424173310161" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20200421145508007" modified="20200424152920461" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20200421145508007" modified="20200424175401170" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200424151952399" list="[[Tobias Beer TW5 tips]] Livros Index" modified="20200424165336409" title="$:/StoryList">
+<div created="20200424175207676" list="" modified="20200424175336862" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -13616,7 +13638,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20200421145548864" modified="20200423181818779" title="$:/temp/NewTagName">
+<div created="20200421145548864" modified="20200424171108958" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div author="Paco Rivière" core-version="&gt;=5.0.0" created="20200421185233782" dependents="" description="Catalan (Spain)" icon="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22810%22%20height%3D%22540%22%3E%0A%3Crect%20width%3D%22810%22%20height%3D%22540%22%20fill%3D%22%23FCDD09%22%2F%3E%0A%3Cpath%20stroke%3D%22%23DA121A%22%20stroke-width%3D%2260%22%20d%3D%22M0%2C90H810m0%2C120H0m0%2C120H810m0%2C120H0%22%2F%3E%0A%3C%2Fsvg%3E" modified="20200421185233783" name="ca-ES" original-plugin-type="language" original-tags="" original-title="$:/languages/ca-ES" original-type="application/json" requires-reload="no" server-url="https://tiddlywiki.com/library/v5.1.22/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.22/index.html/$:/languages/ca-ES" type="text/vnd.tiddlywiki" version="5.1.22">
@@ -14693,20 +14715,32 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200423191209069" modified="20200423191230344" title="$:/view">
 <pre>classic</pre>
 </div>
+<div autor="[[Nelson Rodrigues]]" created="20200424175504507" modified="20200424175559754" tags="Livros" title="A vida como ela é">
+<pre></pre>
+</div>
+<div autor="[[Machado de Assis]]" created="20200424174856968" modified="20200424174921981" tags="Livros" title="Brás Cubas">
+<pre></pre>
+</div>
 <div created="20200421183444843" modified="20200421183602345" tags="Tags" title="citações">
 <pre>&quot;Citações&quot; são frases que eu acho interessantes e quero guardar.</pre>
 </div>
-<div autor="Machado de Assis" created="20200421150640513" modified="20200424160418544" tags="Livros Lido" title="Dom Casmurro">
+<div autor="[[Machado de Assis]]" created="20200421150640513" modified="20200424173625405" tags="Livros Lido" title="Dom Casmurro">
 <pre>É difícil descrever todas as emoções que o livro trás a tona. A história é densa, porém cativante; em alguns momentos parecia que estava lendo a horas, enquanto, na verdade, mal se passaram uma página ou duas. Apesar do linguajar rebuscado para o nosso tempo, parece ter sido escrito para o mais simplório dos leitores, tamanha a elocução do autor.
 
 Um personagem narrador trás a sua história em primeira pessoa, e é difícil não absorvemos seus pensamentos como se fossem nossos próprios. Não acredito que Bento Santiago tenha vivido feliz e indiferente a tudo o que aconteceu. Ao final, o sentimento que tinha era de dissimulação, ao ponto de me fazer sentir culpa pela forma que ele tratou quem tanto amava.
 
 Me sinto confuso e perplexo, até mesmo sem rumo; sem nem saber o que pensar sobre tudo que acabei de ler.</pre>
 </div>
-<div autor="Luiz Felipe Pondé" created="20200424164714398" modified="20200424164907940" tags="Livros Lido" title="Filosofia do Cotidiano">
+<div autor="[[Luiz Felipe Pondé]]" created="20200424164714398" modified="20200424174406195" tags="Livros Lido" title="Filosofia do Cotidiano">
 <pre></pre>
 </div>
-<div autor="Luiz Felipe Pondé" created="20200424164817183" modified="20200424164906422" tags="Livros Lido" title="Filosofia para Corajosos">
+<div autor="[[Luiz Felipe Pondé]]" created="20200424164817183" modified="20200424174422586" tags="Livros Lido" title="Filosofia para Corajosos">
+<pre></pre>
+</div>
+<div autor="[[Tolstoy]]" created="20200424175744767" modified="20200424175828489" tags="Livros" title="Guerra e Paz">
+<pre></pre>
+</div>
+<div autor="[[William Shakespeare]]" created="20200424175300881" modified="20200424175326942" tags="Livros" title="Hamlet">
 <pre></pre>
 </div>
 <div created="20200421151533765" modified="20200424162549804" tags="blog" title="Index" type="text/vnd.tiddlywiki">
@@ -14734,7 +14768,10 @@ Lidas:
 
 &lt;&lt;listaLivros &quot;tag[Lido]&quot;&gt;&gt;</pre>
 </div>
-<div autor="Leandro Karnal" created="20200424161010157" modified="20200424161120622" tags="Livros Lido" title="O Dilema do Porco Espinho">
+<div autor="[[William Shakespeare]]" created="20200424175419971" modified="20200424175448740" tags="Livros" title="Macbeth">
+<pre></pre>
+</div>
+<div autor="[[Leandro Karnal]]" created="20200424161010157" modified="20200424174440498" tags="Livros Lido" title="O Dilema do Porco Espinho">
 <pre></pre>
 </div>
 <div created="20200423142447552" modified="20200423142849403" tags="citações" title="O Mundo de Sofia">
@@ -14743,8 +14780,14 @@ Faço o que posso para que você conheça as suas raízes históricas. Só assim
 &lt;&lt;&lt; Alberto Knox (p. 181)
 </pre>
 </div>
+<div autor="[[Fiódor Dostoiévski]]" created="20200424175629937" modified="20200424175726301" tags="Livros" title="Os Irmãos Karamazov">
+<pre></pre>
+</div>
 <div created="20200421200651908" modified="20200421200726729" tags="Tags" title="pensamentos">
 <pre>Alguns pensamentos aleatórios ou, se preferirem, solilóquios. :)</pre>
+</div>
+<div autor="[[William Shakespeare]]" created="20200424175213248" modified="20200424175255028" tags="Livros" title="Romeu e Julieta">
+<pre></pre>
 </div>
 <div author="Weslleymberg" created="20200421145534913" modified="20200421145827460" tags="pensamentos" title="Sobre Insatisfação" type="text/vnd.tiddlywiki">
 <pre>A necessidade de um mundo que muda cada vez mais rápido é que tudo seja resolvido o mais breve possível. Sendo um pouco romântico, no sentido filosófico da palavra, ouso dizer que a evolução tecnológica nos torna cada vez mais impacientes e infantis. Afinal, se tenho o mundo a um clique de distância, por que devo esperar pra ter o que desejo? Mas não creio que esses sejam os únicos problemas trazidos pelo admirável mundo novo da internet. A desconfiança brota nesse solo fértil que é o esperar, já que aguardar significa dar um voto de confiança àquele que te prometeu algo que não pode ser entregue imediatamente. A paranoia se encarrega de aflorar nossa insegurança, já que confiar fica cada vez mais difícil e encontrar quem confirme nossa desconfiança, cada vez mais fácil. A justiça que era nosso último recurso, hoje é ferramenta de ameaça. E logo estamos insatisfeitos, incapazes de apreciar uma nova conquista.</pre>
