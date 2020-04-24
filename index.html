@@ -141,6 +141,10 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/.meta/macros/listaLivros</li>
+
+<li>$:/.meta/templates/livros</li>
+
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/DefaultMoreSidebarTab</li>
@@ -220,6 +224,8 @@ Error message and password prompt
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/googleanalytics</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/googleanalytics--1678223282</li>
+
+<li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
 
@@ -469,6 +475,12 @@ Error message and password prompt
 
 <li>Index</li>
 
+<li>Lido</li>
+
+<li>Livros</li>
+
+<li>O Dilema do Porco Espinho</li>
+
 <li>O Mundo de Sofia</li>
 
 <li>pensamentos</li>
@@ -493,6 +505,19 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20200424161430152" modified="20200424162224394" tags="$:/tags/Macro" title="$:/.meta/macros/listaLivros">
+<pre>\define listaLivros(filtro:&quot;&quot;)
+&lt;$list filter=&quot;[tag[Livros]$filtro$sort[title]]&quot;&gt;
+&lt;$checkbox tag=&quot;Lido&quot;/&gt; {{||$:/.meta/templates/livros}}
+&lt;br/&gt;
+&lt;/$list&gt;
+\end</pre>
+</div>
+<div created="20200424152951230" modified="20200424160315956" tags="" title="$:/.meta/templates/livros">
+<pre>&lt;$link to={{!!title}} tooltip=&quot;Custom tooltip&quot;&gt;
+{{!!title}} - {{!!autor}}
+&lt;/$link&gt;</pre>
+</div>
 <div created="20200423142718914" modified="20200423142718914" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
@@ -13490,6 +13515,9 @@ Error message and password prompt
 <div created="20200421195916354" modified="20200421200220607" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/googleanalytics--1678223282">
 <pre>settings</pre>
 </div>
+<div created="20200424152735641" modified="20200424152735641" title="$:/state/showeditpreview">
+<pre>yes</pre>
+</div>
 <div created="20200421144407084" modified="20200421181547900" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
@@ -13514,16 +13542,16 @@ Error message and password prompt
 <div created="20200421185412208" modified="20200423142715327" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20200421145941134" modified="20200423182129478" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/Orphans</pre>
+<div created="20200421145941134" modified="20200424154617600" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20200421145508007" modified="20200423191158651" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20200421145508007" modified="20200424152920461" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div created="20200423191143026" list="$:/ControlPanel Index" modified="20200423191313518" title="$:/StoryList">
+<div created="20200424151952399" list="Livros Index" modified="20200424162313177" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -14537,8 +14565,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200421185306063" modified="20200423191255002" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>Cec</pre>
 </div>
-<div created="20200421193427921" modified="20200423182125668" title="$:/temp/search">
-<pre></pre>
+<div created="20200421193427921" modified="20200424152052944" title="$:/temp/search">
+<pre>Dom </pre>
 </div>
 <div created="20200423191026419" modified="20200423191026419" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.22/index.html" url="https://tiddlywiki.com/library/v5.1.22/index.html">
 <pre>loaded</pre>
@@ -14664,7 +14692,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200421183444843" modified="20200421183602345" tags="Tags" title="citações">
 <pre>&quot;Citações&quot; são frases que eu acho interessantes e quero guardar.</pre>
 </div>
-<div author="Weslleymberg" created="20200421150640513" modified="20200421161012239" tags="pensamentos" title="Dom Casmurro">
+<div autor="Machado de Assis" created="20200421150640513" modified="20200424160418544" tags="Livros Lido" title="Dom Casmurro">
 <pre>É difícil descrever todas as emoções que o livro trás a tona. A história é densa, porém cativante; em alguns momentos parecia que estava lendo a horas, enquanto, na verdade, mal se passaram uma página ou duas. Apesar do linguajar rebuscado para o nosso tempo, parece ter sido escrito para o mais simplório dos leitores, tamanha a elocução do autor.
 
 Um personagem narrador trás a sua história em primeira pessoa, e é difícil não absorvemos seus pensamentos como se fossem nossos próprios. Não acredito que Bento Santiago tenha vivido feliz e indiferente a tudo o que aconteceu. Ao final, o sentimento que tinha era de dissimulação, ao ponto de me fazer sentir culpa pela forma que ele tratou quem tanto amava.
@@ -14681,6 +14709,23 @@ Pensamentos:
 Citações:
 
 &lt;&lt;list-links &quot;[tag[citações]reverse[]]&quot;&gt;&gt;</pre>
+</div>
+<div color="#00ff80" created="20200424160432962" icon="$:/core/images/done-button" modified="20200424162327817" title="Lido">
+<pre>Obras que já li.
+
+&lt;&lt;listaLivros &quot;tag[Lido]&quot;&gt;&gt;</pre>
+</div>
+<div created="20200424151327661" modified="20200424162301794" tags="" title="Livros">
+<pre>Obras do meu interesse:
+
+&lt;&lt;listaLivros &quot;!tag[Lido]&quot;&gt;&gt;
+
+Lidas:
+
+&lt;&lt;listaLivros &quot;tag[Lido]&quot;&gt;&gt;</pre>
+</div>
+<div autor="Leandro Karnal" created="20200424161010157" modified="20200424161120622" tags="Livros Lido" title="O Dilema do Porco Espinho">
+<pre></pre>
 </div>
 <div created="20200423142447552" modified="20200423142849403" tags="citações" title="O Mundo de Sofia">
 <pre>&lt;&lt;&lt;
